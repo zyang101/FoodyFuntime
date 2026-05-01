@@ -218,6 +218,10 @@ main {
   max-width: 38rem;
 }
 
+.prose--wide {
+  max-width: 100%;
+}
+
 .prose h1 {
   font-family: var(--font-ui);
   font-size: clamp(1.75rem, 4vw, 2.125rem);
@@ -236,11 +240,26 @@ main {
   margin: 0 0 1.25rem;
 }
 
+.section-gap {
+  margin-top: 2.5rem;
+}
+
 .prose figure {
   margin: 2rem 0;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+}
+
+.prose > figure {
+  width: 50%;
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+.prose > figure img {
+  width: 100%;
+  max-width: 100%;
 }
 
 .prose figcaption {
@@ -251,6 +270,33 @@ main {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-top: none;
+}
+
+.review-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 2rem 0;
+}
+
+.review-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.review-grid figure {
+  margin: 0;
+}
+
+.review-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .site-footer {
